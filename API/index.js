@@ -9,6 +9,10 @@ const app = express();
 // settings
 app.set('port', process.env.PORT || 4000);
 
+// 
+app.use(express.json());
+app.use(express.urlencoded({extended: true})); 
+
 // require db
 require('./db');
 
