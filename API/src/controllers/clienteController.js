@@ -43,7 +43,7 @@ exports.mostrarCliente = async (req, res, next) => {
 // Actualiza un cliente 
 exports.actualizarCliente = async (req, res, next) => {
     try {
-        const cliente = await Clientes.findOneAndUpdate({_id: req.params.idCliente}, 
+        const cliente = await Clientes.findOneAndUpdate({_id : req.params.idCliente}, 
             req.body, {
                 new: true
             });
@@ -52,5 +52,16 @@ exports.actualizarCliente = async (req, res, next) => {
     } catch (eror) {
         console.log(error);
         next();
+    }
+} 
+
+// Eliminar un cliente
+
+exports.eliminarCliente = async (req, res, next) => {
+    try {
+        const cliente = await Clientes.findByIdAndDelete({_id : req.params.idCliente});
+        res.json({mensaje: `El cliente ${cliente.nombre} se ha eliminado`});
+    } catch (eror) {
+        console.log(error);
     }
 }
