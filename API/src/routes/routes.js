@@ -12,5 +12,8 @@ router.get('/clientes', clienteController.mostrarClientes);
 // Obtener un cliente en especifico por ID
 router.get('/clientes/:idCliente', clienteController.mostrarCliente);
 
+// Actualizar cliente
+router.put('/clientes/:idCliente', clienteController.actualizarCliente);
+
 
 module.exports = router;
