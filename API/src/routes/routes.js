@@ -27,6 +27,9 @@ router.delete('/clientes/:idCliente', clienteController.eliminarCliente);
 router.post('/productos', productosController.nuevoProducto);
 
 // mostrar productos
-router.get('/productos', productosController.mostrarProductos);
+router.get('/productos', 
+    productosController.subirArchivo,
+    productosController.mostrarProductos
+);
 
 module.exports = router;
