@@ -7,7 +7,7 @@ const shortid = require('shortid');
 const configMulter = {
     storage: fileStorage = multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, __dirname+'../uploads/');
+            cb(null, __dirname+'../../uploads/');
         },
         filename: (req, file, cb) => {
             const extension = file.mimetype.split('/')[1];
@@ -20,7 +20,7 @@ const configMulter = {
         } else {
             cb(new Error('Formato No válido'))
         }
-    }
+    },
 }
 
 // pasar la configuracion y el campo
