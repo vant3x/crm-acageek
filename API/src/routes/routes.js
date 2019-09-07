@@ -61,5 +61,8 @@ router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
 // actualizar pedidos 
 router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
 
+// eliminar un pedido 
+router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
+
 module.exports = router;
  
