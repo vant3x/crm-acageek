@@ -40,5 +40,17 @@ exports.mostrarPedido = async (req, res, next) => {
        res.json({mensaje: 'Ese pedido que buscas no existe :('});
        next();
     }
+}
 
+// actualizar pedido
+exports.actualizarPedido = async (req, res, next) => {
+    try {
+        let pedido = await Pedidos.findOneAndUpdate({_id : req.params.idPedido}, req.body, {
+            new: true
+        });
+        res.json(pedido);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
 }

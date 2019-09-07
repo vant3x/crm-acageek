@@ -58,5 +58,8 @@ router.get('/pedidos', pedidosController.mostrarPedidos);
 // mostrar un pedido por su id
 router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
 
+// actualizar pedidos 
+router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
+
 module.exports = router;
  
