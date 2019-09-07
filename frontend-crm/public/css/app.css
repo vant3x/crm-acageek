@@ -1,6 +1,6 @@
 :root {
     --fontTexto:  'Raleway', sans-serif;
-    --fontHeading: 'Staatliches', cursive;
+    --fontHeading: 'Lobster', cursive;
 
     /** Colores **/
     --azul : #00487C;
@@ -150,6 +150,13 @@ h2 {
 /** Navegacion **/
 .sidebar {
     padding-top: 1.8rem;
+
+}
+
+.navegacion {
+    text-align: left;
+    margin:0;
+    padding:0;
 }
 
 .navegacion a {
@@ -161,9 +168,16 @@ h2 {
     position: relative;
     padding-left: 5rem;
     padding-top: 2rem;
+   
 }
+.navegacion a i {
+    font-weight:900;
+    font-size: 1.7em;
+    margin-right: 10px;
+} 
 .navegacion a::before {
     display: inline-block;
+    
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
@@ -174,6 +188,7 @@ h2 {
     left: 0;
     top: 1rem;
 }
+/*
 .navegacion a.clientes::before {
     font-family: "Font Awesome 5 Free"; 
     font-weight: 900; 
@@ -184,12 +199,13 @@ h2 {
     font-weight: 900; 
     content: "\f468";
 }
+
 .navegacion a.pedidos::before {
     font-family: "Font Awesome 5 Free"; 
     font-weight: 900; 
     content: "\f02d";
 }
-
+*/
 /** Caja **/
 
 @media (max-width: 767px) {
