@@ -2,5 +2,5 @@
 ./API/node_modules
 ./Frontend/node_modules
 /Frontend/node_modules
-./API/uploads
-/API/uploads
+./API/src/uploads
+/API/src/uploads
