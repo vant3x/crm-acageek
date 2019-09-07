@@ -37,7 +37,7 @@ localhost:5000/productos # : trae todos los productos
 ```
 
 ### Crear nuevo producto : POST
-Cada producto tiene: nombre, precio, y una imagen opcionañ
+Cada producto tiene: nombre, precio, y una imagen opcional
 ```bash
 localhost:5000/productos # crea nuevo producto
 ```
