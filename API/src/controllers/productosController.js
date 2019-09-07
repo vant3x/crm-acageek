@@ -77,3 +77,30 @@ exports.mostrarProducto = async (req, res, next) => {
     }
     
 }
+
+// actualizar producto via  id
+exports.actualizarProducto = async (req, res, next) => {
+    try {
+
+        let productoAnterior = await Productos.findById(req.params.idProducto);
+
+        // construir un nuevo producto
+        let nuevoProducto = req.body;
+
+        // verificar si hay imagen nueva
+        if (req.file) {
+            nuevoProducto.imagen = req.file.filename;
+        } else {
+            nuevoProducto.imagen = productoAnterior.imagen;
+        }
+
+        let producto = await Productos.findOneAndUpdate({_id: req.params.idProducto}, nuevoProducto, {
+                new: true,
+            });
+        res.json(producto);
+    } catch (error) {
+        console.log(error);
+        res.json({error: `No se pudo actualizar el producto de id: ${req.params.idProducto}`});
+        next(); 
+    }
+}

@@ -35,4 +35,12 @@ router.get('/productos',  productosController.mostrarProductos);
 // mostrar producto especifico por su id
 router.get('/productos/:idProducto', productosController.mostrarProducto);
 
+// actualizar productos 
+router.put('/productos/:idProducto', 
+    productosController.subirArchivo,
+    productosController.actualizarProducto
+);
+
+// eliminar producto 
+
 module.exports = router;
