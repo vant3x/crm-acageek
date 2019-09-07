@@ -32,4 +32,7 @@ router.post('/productos',
 // mostrar productos
 router.get('/productos',  productosController.mostrarProductos);
 
+// mostrar producto especifico por su id
+router.get('/productos/:idProducto', productosController.mostrarProducto);
+
 module.exports = router;
