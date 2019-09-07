@@ -42,5 +42,9 @@ router.put('/productos/:idProducto',
 );
 
 // eliminar producto 
+router.delete('/productos/:idProducto', 
+    productosController.eliminarProducto
+);
 
 module.exports = router;
+ 

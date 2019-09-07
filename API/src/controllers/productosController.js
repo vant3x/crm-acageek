@@ -42,8 +42,8 @@ exports.nuevoProducto = async (req, res, next) => {
 
     try {
         console.log(req.body);
-        // verificar  si hay archivo
-        if (req.file.filename) {
+        
+        if (req.file) { // req.file || req.file.filename
             producto.imagen = req.file.filename
         }
         await producto.save();
@@ -102,5 +102,17 @@ exports.actualizarProducto = async (req, res, next) => {
         console.log(error);
         res.json({error: `No se pudo actualizar el producto de id: ${req.params.idProducto}`});
         next(); 
+    }
+}
+
+// Eliminar un producto via id 
+    // aun falta eliminar el archivo del servidor
+exports.eliminarProducto = async (req, res, next) => {
+    try {
+        await Productos.findByIdAndDelete({ _id :  req.params.idProducto});
+        res.json({mensaje: 'El producto se ha eliminado'});
+    } catch (error) {
+        console.log(error);
+        next();
     }
 }
