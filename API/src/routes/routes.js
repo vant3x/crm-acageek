@@ -55,6 +55,8 @@ router.post('/pedidos', pedidosController.nuevoPedido);
 // mostrar todos los pedidos 
 router.get('/pedidos', pedidosController.mostrarPedidos);
 
+// mostrar un pedido por su id
+router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
 
 module.exports = router;
  

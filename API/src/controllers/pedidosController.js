@@ -14,7 +14,7 @@ exports.nuevoPedido = async (req, res, next) => {
     }
 }
 
-// muestra todos los pedidos
+// mostrar todos los pedidos
 exports.mostrarPedidos = async (req, res, next) => {
     try {
         const pedidos = await Pedidos.find({}).populate('cliente').populate({
@@ -26,4 +26,19 @@ exports.mostrarPedidos = async (req, res, next) => {
         console.log(error);
         next();
     }
+}
+
+// mostrar pedido en especifico via id
+exports.mostrarPedido = async (req, res, next) => {
+    try {
+    const pedido = await Pedidos.findById(req.params.idPedido).populate('cliente').populate({
+        path: 'pedido.producto',
+        model: 'Productos'
+     });
+     res.json(pedido);
+    } catch (error) {   
+       res.json({mensaje: 'Ese pedido que buscas no existe :('});
+       next();
+    }
+
 }
