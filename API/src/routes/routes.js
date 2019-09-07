@@ -3,6 +3,7 @@ const router = Router();
 
 const clienteController = require('../controllers/clienteController');
 const productosController = require('../controllers/productosController');
+const pedidosController = require('../controllers/pedidosController');
 
 // -------***--- Rutas clientes --------***---
 
@@ -45,6 +46,11 @@ router.put('/productos/:idProducto',
 router.delete('/productos/:idProducto', 
     productosController.eliminarProducto
 );
+
+// -------***--- Rutas Pedidos --------***---
+
+//  Nuevo pedido
+router.post('/pedidos', pedidosController.nuevoPedido);
 
 module.exports = router;
  

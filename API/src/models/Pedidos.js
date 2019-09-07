@@ -6,13 +6,23 @@ const pedidosSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Clientes'
     },
-    productos: [{
+    pedido: [{
         producto: {
             type: Schema.ObjectId,
             ref: 'Productos'
         },
-        cantidad: Number
-    }]
+        cantidad: { 
+            type: Number,
+            required: true
+        }
+    }],
+    total: { type: Number },
+
+    fecha_creacion: {
+        type: Date,
+        default: Date.now
+    }
+    
 });
 
 module.exports = mongoose.model('Pedidos', pedidosSchema);
