@@ -49,8 +49,12 @@ router.delete('/productos/:idProducto',
 
 // -------***--- Rutas Pedidos --------***---
 
-//  Nuevo pedido
+//  Agrega nuevo pedido
 router.post('/pedidos', pedidosController.nuevoPedido);
+
+// mostrar todos los pedidos 
+router.get('/pedidos', pedidosController.mostrarPedidos);
+
 
 module.exports = router;
  
