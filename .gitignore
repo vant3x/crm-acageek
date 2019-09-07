@@ -4,3 +4,6 @@
 /Frontend/node_modules
 ./API/src/uploads
 /API/src/uploads
+./API/DBdata
+/API/DBdata
+API/variables.env
